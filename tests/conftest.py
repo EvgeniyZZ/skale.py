@@ -61,6 +61,10 @@ def validator(skale):
     return setup_validator(skale)
 
 
+def skale_ima(web3):
+    skale_ima_object 
+
+
 @pytest.fixture
 def node_wallets(skale):
     wallets = []

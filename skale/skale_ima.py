@@ -31,7 +31,13 @@ logger = logging.getLogger(__name__)
 
 CONTRACTS_INFO = [
     ContractInfo('linker', 'Linker',
-                 contracts.Linker, ContractTypes.API, False)
+                 contracts.Linker, ContractTypes.API, False),
+    ContractInfo('deposit_box_eth', 'DepositBoxEth',
+                 contracts.DepositBoxEth, ContractTypes.API, False),
+    ContractInfo('deposit_box_erc20', 'DepositBoxERC20',
+                 contracts.DepositBoxERC20, ContractTypes.API, False),
+    ContractInfo('community_pool', 'CommunityPool',
+                 contracts.CommunityPool, ContractTypes.API, False)
 ]
 
 
@@ -39,7 +45,12 @@ def spawn_skale_ima_lib(skale_ima):
     """ Clone skale ima object with the same wallet """
     return SkaleIma(skale_ima._endpoint, skale_ima._abi_filepath, skale_ima.wallet)
 
+class SkaleIma(SkaleBase): 
+    @property
+    def project_name(self) -> str:
+        return 'mainnet-ima'
+    
 
-class SkaleIma(SkaleBase):
     def set_contracts_info(self):
         self._SkaleBase__contracts_info = get_contracts_info(CONTRACTS_INFO)
+ 
