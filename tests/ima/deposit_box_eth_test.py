@@ -58,5 +58,6 @@ def test_disable_active_eth_transfers():
 
 def test_enable_active_eth_transfers():
     ima = skale_ima()
-    schain_name = os.environ['SCHAIN_NAME']
+    schain_name = os.environ[f'SCHAIN_NAME']
     assert ima.deposit_box_eth.enable_active_eth_transfers(schain_name)
+
