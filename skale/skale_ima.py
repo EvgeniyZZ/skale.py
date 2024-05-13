@@ -38,6 +38,8 @@ CONTRACTS_INFO = [
                  contracts.DepositBoxERC20, ContractTypes.API, False),
     ContractInfo('community_pool', 'CommunityPool',
                  contracts.CommunityPool, ContractTypes.API, False)
+    # ContractInfo('community_locker', 'CommunityLocker',
+    #              contracts.CommunityLocker, ContractTypes.API, False)
 ]
 
 
@@ -48,7 +50,7 @@ def spawn_skale_ima_lib(skale_ima):
 class SkaleIma(SkaleBase): 
     @property
     def project_name(self) -> str:
-        return 'mainnet-ima'
+        return 'schain-ima'
     
 
     def set_contracts_info(self):

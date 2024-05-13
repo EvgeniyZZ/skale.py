@@ -53,7 +53,7 @@ class DepositBoxERC20(BaseContract):
     
 
     def has_arbiter_role(self, role: bytes, address: int) -> bool:
-        return self.contract.functions.hasRole(role,address).call()
+        return self.contract.functions.hasRole(role, address).call()
     
     
     @transaction_method

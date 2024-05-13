@@ -7,3 +7,4 @@ from skale.contracts.ima.linker import Linker
 from skale.contracts.ima.deposit_box_erc20 import DepositBoxERC20
 from skale.contracts.ima.deposit_box_eth import DepositBoxEth
 from skale.contracts.ima.community_pool import CommunityPool
+from skale.contracts.ima.community_locker import CommunityLocker
