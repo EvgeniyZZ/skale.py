@@ -6,7 +6,7 @@
 ![Libraries.io dependency status for GitHub repo](https://img.shields.io/librariesio/github/skalenetwork/skale.py)
 [![Discord](https://img.shields.io/discord/534485763354787851.svg)](https://discord.gg/vvUtWJB)
 
-Python client library used in SKALE Network components.
+Python client library used in SKALE network components.
 
 - Python 3.7+ support
 - Compatibility with `web3.py` v6
