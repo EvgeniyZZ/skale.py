@@ -4,7 +4,7 @@ from Crypto.Hash import keccak
 
 class DepositBoxEth(BaseContract):
     @transaction_method
-    def deposit(self,schain_name: str) -> TxRes:
+    def deposit(self, schain_name: str) -> TxRes:
         return self.contract.functions.deposit(schain_name)
     
     
@@ -36,5 +36,3 @@ class DepositBoxEth(BaseContract):
     @transaction_method
     def grant_role(self, role: bytes, address: str) -> TxRes:
         return self.contract.functions.grantRole(role, address)
-    
-    

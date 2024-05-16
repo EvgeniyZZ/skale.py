@@ -3,6 +3,7 @@ from skale.transactions.result import TxRes
 from Crypto.Hash import keccak
 
 
+
 class CommunityLocker(BaseContract):
     @transaction_method
     def set_time_limit_per_message(self, schain_name: str, new_time_limit: int) -> TxRes:
