@@ -36,6 +36,8 @@ CONTRACTS_INFO = [
                  contracts.DepositBoxEth, ContractTypes.API, False),
     ContractInfo('deposit_box_erc20', 'DepositBoxERC20',
                  contracts.DepositBoxERC20, ContractTypes.API, False),
+    ContractInfo('deposit_box_erc721', 'DepositBoxERC721',
+                 contracts.DepositBoxERC721, ContractTypes.API, False),
     ContractInfo('community_pool', 'CommunityPool',
                  contracts.CommunityPool, ContractTypes.API, False),
     ContractInfo('community_locker', 'CommunityLocker',
