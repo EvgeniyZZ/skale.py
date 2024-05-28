@@ -11,11 +11,9 @@ class CommunityLocker(BaseContract):
         return self.contract.functions.setTimeLimitPerMessage(schain_name, new_time_limit)
     def constant_setter_role(self) -> bytes:
         return self.contract.functions.CONSTANT_SETTER_ROLE().call()
-    
 
     def has_constant_setter_role(self, role: bytes, address: int) -> bool:
         return self.contract.functions.hasRole(role, address).call()
-    
 
     @transaction_method
     def grant_role(self, role: bytes, address: str) -> TxRes:

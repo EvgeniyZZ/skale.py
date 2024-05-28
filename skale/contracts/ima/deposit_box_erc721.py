@@ -8,5 +8,5 @@ class DepositBoxERC721(BaseContract):
     def deposit_erc721(self, schain_name: str, address: int, tokenID: int) -> TxRes: 
         return self.contract.functions.depositERC721(schain_name, address, tokenID)
 
-    def 
+    # def 
     

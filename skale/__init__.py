@@ -12,4 +12,3 @@ from skale.skale_allocator import SkaleAllocator
 from skale.contracts.ima import Linker
 from skale.contracts.ima import DepositBoxEth
 from skale.contracts.ima import DepositBoxERC20
-
