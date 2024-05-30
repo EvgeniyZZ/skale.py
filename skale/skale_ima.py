@@ -42,8 +42,18 @@ CONTRACTS_INFO = [
                  contracts.CommunityPool, ContractTypes.API, False),
     ContractInfo('community_locker', 'CommunityLocker',
                  contracts.CommunityLocker, ContractTypes.API, False),
+    ContractInfo('token_manager_erc20', 'TokenManagerERC20',
+                 contracts.TokenManagerERC20, ContractTypes.API, False),
     ContractInfo('token_manager_erc721', 'TokenManagerERC721',
-                 contracts.TokenManagerERC721, ContractTypes.API, False)
+                 contracts.TokenManagerERC721, ContractTypes.API, False),
+    ContractInfo('token_manager_erc721_wmt', 'TokenManagerERC721WithMetadata',
+                 contracts.TokenManagerERC721WithMetadata, ContractTypes.API, False),
+    ContractInfo('token_manager_erc1155', 'TokenManagerERC1155',
+                 contracts.TokenManagerERC1155, ContractTypes.API, False),
+    ContractInfo('token_manager_eth', 'TokenManagerETH',
+                 contracts.TokenManagerETH, ContractTypes.API, False),
+    ContractInfo('message_proxy_for_mainnet', 'MessageProxyForMainnet',
+                 contracts.MessageProxyForMainnet, ContractTypes.API, False)
 ]
 
 

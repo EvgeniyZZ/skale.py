@@ -2,7 +2,7 @@ from skale.contracts.base_contract import BaseContract, transaction_method
 from skale.transactions.result import TxRes
 
 
-class TokenManagerERC721(BaseContract):
+class TokenManagerERC721WithMetadata(BaseContract):
     def automatic_deploy(self) -> bool:
         return self.contract.functions.automaticDeploy().call()
 

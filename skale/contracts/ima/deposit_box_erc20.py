@@ -18,7 +18,7 @@ class DepositBoxERC20(BaseContract):
 
     @transaction_method
     def set_big_transfer_value(self, schain_name: str, token: int, value: int) -> TxRes:
-        return self.contract.functions.setBigTransferValue(schain_name,token,value)   
+        return self.contract.functions.setBigTransferValue(schain_name, token, value)   
 
     @transaction_method
     def set_big_transfer_delay(self, schain_name: str, delay: int) -> TxRes:
@@ -43,7 +43,7 @@ class DepositBoxERC20(BaseContract):
     def admin_role(self) -> bytes:
         return self.contract.functions.DEFAULT_ADMIN_ROLE().call()
 
-    def has_arbiter_role(self, role: bytes, address: int) -> bool:
+    def has_role(self, role: bytes, address: int) -> bool:
         return self.contract.functions.hasRole(role, address).call()
 
     @transaction_method
