@@ -27,3 +27,7 @@ class TokenManagerERC20(BaseContract):
     @transaction_method
     def disableAutomaticDeploy(self) -> TxRes:
         return self.contract.functions.disableAutomaticDeploy()
+    # TODO
+    def get_clones_erc20(self, key: bytes, address: str) -> TxRes:
+        return self.contract.functions(key, address)
+

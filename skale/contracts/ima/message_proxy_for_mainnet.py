@@ -3,7 +3,7 @@ from skale.transactions.result import TxRes
 from Crypto.Hash import keccak
 
 #PAUSABLE_ROLE  EXTRA_CONTRACT_REGISTRAR_ROLE
-class MessageProxyForMainnet(BaseContract): 
+class MessageProxyForMainnet(BaseContract):
     @transaction_method
     def register_extra_contract(self, schain_name: str, contract_address: int) -> TxRes:
         return self.contract.functions.registerExtraContract(schain_name, contract_address)
