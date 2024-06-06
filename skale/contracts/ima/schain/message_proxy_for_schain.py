@@ -8,6 +8,9 @@ class MessageProxyForSchain(BaseContract):
     def set_minimum_receiver_balance(self, amount: int) -> TxRes: 
         return self.contract.functions.setMinimumReceiverBalance(amount)
 
+    def get_minimum_receiver_balance(self) - int:
+        return self.contract.functions.minimumReceiverBalance().call()
+
     def constant_setter_role(self) -> bytes:
         return self.contract.functions.CONSTANT_SETTER_ROLE().call()
 

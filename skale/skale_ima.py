@@ -65,8 +65,7 @@ class SkaleIma(SkaleBase):
     @property
     def project_name(self) -> str:
         return 'schain-ima'  #mainnet-ima
-    
+
 
     def set_contracts_info(self):
         self._SkaleBase__contracts_info = get_contracts_info(CONTRACTS_INFO)
- 
