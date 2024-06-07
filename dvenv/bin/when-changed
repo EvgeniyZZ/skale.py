@@ -1,0 +1,4 @@
+#!/home/evgeniy/Work/evg/skale.py/dvenv/bin/python
+
+from whenchanged.whenchanged import main
+main()

@@ -29,42 +29,36 @@ from skale.utils.helper import get_contracts_info
 
 logger = logging.getLogger(__name__)
 
-
-CONTRACTS_INFO = [
-    ContractInfo('linker', 'Linker',
-                 contracts.Linker, ContractTypes.API, False),
-    ContractInfo('deposit_box_eth', 'DepositBoxEth',
-                 contracts.DepositBoxEth, ContractTypes.API, False),
-    ContractInfo('deposit_box_erc20', 'DepositBoxERC20',
-                 contracts.DepositBoxERC20, ContractTypes.API, False),
-    ContractInfo('deposit_box_erc721', 'DepositBoxERC721',
-                 contracts.DepositBoxERC721, ContractTypes.API, False),
-    ContractInfo('community_pool', 'CommunityPool',
-                 contracts.CommunityPool, ContractTypes.API, False),
-    ContractInfo('community_locker', 'CommunityLocker',
-                 contracts.CommunityLocker, ContractTypes.API, False),
-    ContractInfo('token_manager_erc20', 'TokenManagerERC20',
-                 contracts.TokenManagerERC20, ContractTypes.API, False),
-    ContractInfo('token_manager_erc721', 'TokenManagerERC721',
-                 contracts.TokenManagerERC721, ContractTypes.API, False),
-    ContractInfo('token_manager_erc721_wmt', 'TokenManagerERC721WithMetadata',
-                 contracts.TokenManagerERC721WithMetadata, ContractTypes.API, False),
-    ContractInfo('token_manager_erc1155', 'TokenManagerERC1155',
-                 contracts.TokenManagerERC1155, ContractTypes.API, False),
-    ContractInfo('token_manager_eth', 'TokenManagerETH',
-                 contracts.TokenManagerETH, ContractTypes.API, False),
-    ContractInfo('message_proxy_for_mainnet', 'MessageProxyForMainnet',
-                 contracts.MessageProxyForMainnet, ContractTypes.API, False)
-]
-
-    def contracts_info(self) -> List[ContractInfo[SkaleIma]]:
+def contracts_info(self) -> List[ContractInfo[SkaleIma]]:
         import skale.contracts.ima as contracts
         return [
             ContractInfo('linker', 'Linker',
-                         contracts.Linker, ContractTypes.API, False)
+                         contracts.Linker, ContractTypes.API, False),
+            ContractInfo('deposit_box_eth', 'DepositBoxEth',
+                        contracts.DepositBoxEth, ContractTypes.API, False),
+            ContractInfo('deposit_box_erc20', 'DepositBoxERC20',
+                        contracts.DepositBoxERC20, ContractTypes.API, False),
+            ContractInfo('deposit_box_erc721', 'DepositBoxERC721',
+                        contracts.DepositBoxERC721, ContractTypes.API, False),
+            ContractInfo('community_pool', 'CommunityPool',
+                        contracts.CommunityPool, ContractTypes.API, False),
+            ContractInfo('community_locker', 'CommunityLocker',
+                        contracts.CommunityLocker, ContractTypes.API, False),
+            ContractInfo('token_manager_erc20', 'TokenManagerERC20',
+                        contracts.TokenManagerERC20, ContractTypes.API, False),
+            ContractInfo('token_manager_erc721', 'TokenManagerERC721',
+                        contracts.TokenManagerERC721, ContractTypes.API, False),
+            ContractInfo('token_manager_erc721_wmt', 'TokenManagerERC721WithMetadata',
+                        contracts.TokenManagerERC721WithMetadata, ContractTypes.API, False),
+            ContractInfo('token_manager_erc1155', 'TokenManagerERC1155',
+                        contracts.TokenManagerERC1155, ContractTypes.API, False),
+            ContractInfo('token_manager_eth', 'TokenManagerETH',
+                        contracts.TokenManagerETH, ContractTypes.API, False),
+            ContractInfo('message_proxy_for_mainnet', 'MessageProxyForMainnet',
+                        contracts.MessageProxyForMainnet, ContractTypes.API, False)
         ]
 
-    def set_contracts_info(self) -> None:
+def set_contracts_info(self) -> None:
         self._SkaleBase__contracts_info = get_contracts_info(self.contracts_info())
 
 class SkaleIma(SkaleBase): 
