@@ -1,17 +1,23 @@
 # flake8: noqa
 
-from skale.contracts.contract_manager import ContractManager
+from skale.contracts.manager.contract_manager import ContractManager
 from skale.contracts.base_contract import BaseContract, transaction_method
 
-from skale.contracts.ima_mainnet.community_locker
-from skale.contracts.ima.deposit_box_erc20 import DepositBoxERC20
-from skale.contracts.ima.deposit_box_erc721 import DepositBoxERC721
-from skale.contracts.ima.deposit_box_eth import DepositBoxEth
-from skale.contracts.ima.community_pool import CommunityPool
-from skale.contracts.ima.message_proxy_for_mainnet import MessageProxyForMainnet
-from skale.contracts.ima.community_locker import CommunityLocker
-from skale.contracts.ima.schain.token_manager_erc20 import TokenManagerERC20
-from skale.contracts.ima.schain.token_manager_erc721 import TokenManagerERC721
-from skale.contracts.ima.schain.token_manager_erc721_wmt import TokenManagerERC721WithMetadata
-from skale.contracts.ima.schain.token_manager_erc1155 import TokenManagerERC1155
-from skale.contracts.ima.schain.token_manager_eth import TokenManagerETH
+from skale.contracts.ima_schain.message_proxy_for_schain import MessageProxyForSchain
+#from skale.contracts.ima_schain.token_manager_linker import TokenManagerLinker
+from skale.contracts.ima_schain.token_manager_eth import TokenManagerETH
+from skale.contracts.ima_schain.token_manager_erc20 import TokenManagerERC20
+from skale.contracts.ima_schain.token_manager_erc721 import TokenManagerERC721
+from skale.contracts.ima_schain.token_manager_erc721_wmt import TokenManagerERC721WithMetadata
+from skale.contracts.ima_schain.token_manager_erc1155 import TokenManagerERC1155
+from skale.contracts.ima_schain.community_locker import CommunityLocker
+
+__all__ = [
+    'MessageProxyForSchain',
+    'TokenManagerETH',
+    'TokenManagerERC20',
+    'TokenManagerERC721',
+    'TokenManagerERC721WithMetadata',
+    'TokenManagerERC1155',
+    'CommunityLocker'
+]
