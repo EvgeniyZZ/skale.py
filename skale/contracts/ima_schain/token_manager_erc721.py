@@ -1,5 +1,6 @@
 from skale.contracts.base_contract import BaseContract, transaction_method
 from skale.transactions.result import TxRes
+from Crypto.Hash import keccak
 
 
 class TokenManagerERC721(BaseContract):
@@ -29,3 +30,8 @@ class TokenManagerERC721(BaseContract):
 
     def get_role_member(self, role: bytes, index: int) -> bytes:
         return self.contract.functions.getRoleMember(role, index).call()
+
+    def get_clones_erc721(self, schain_hash: bytes, address: str) -> int:
+        keccak_hash = keccak.new(data=schain_hash.encode("utf8"), digest_bits=256)
+        hash = keccak_hash.digest()
+        return self.contract.functions.clonesErc721(hash, address).call()

@@ -4,6 +4,9 @@ from Crypto.Hash import keccak
 
 class DepositBoxERC20(BaseContract):
     '''Deposit Box'''
+    def is_whitelisted(self, schain_name: str) -> bool:
+        return self.contract.functions.isWhitelisted(schain_name).call()
+
     @transaction_method
     def add_erc20_token(self, schain_name: str, address: int) -> TxRes:
         return self.contract.functions.addERC20TokenByOwner(schain_name, address)

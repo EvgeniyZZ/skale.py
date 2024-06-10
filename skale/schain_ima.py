@@ -63,5 +63,3 @@ class SchainIma(SkaleBase):
 def spawn_skale_ima_lib(SchainIma: SchainIma) -> SchainIma:
     """ Clone skale ima object with the same wallet """
     return SchainIma(schain_ima._endpoint, schain_ima.instance.address, schain_ima.wallet)
-
-
