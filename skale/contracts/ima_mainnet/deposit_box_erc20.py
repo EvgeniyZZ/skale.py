@@ -8,6 +8,14 @@ class DepositBoxERC20(BaseContract):
         return self.contract.functions.isWhitelisted(schain_name).call()
 
     @transaction_method
+    def enable_whitelist(self, schain_name: str) -> TxRes:
+        return self.contract.functions.enableWhitelist(schain_name)
+    
+    @transaction_method
+    def disable_whitelist(self, schain_name: str) -> TxRes:
+        return self.contract.functions.disableWhitelist(schain_name)
+
+    @transaction_method
     def add_erc20_token(self, schain_name: str, address: int) -> TxRes:
         return self.contract.functions.addERC20TokenByOwner(schain_name, address)
 

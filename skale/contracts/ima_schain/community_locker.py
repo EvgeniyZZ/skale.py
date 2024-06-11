@@ -19,3 +19,21 @@ class CommunityLocker(BaseContract):
     @transaction_method
     def grant_role(self, role: bytes, address: str) -> TxRes:
         return self.contract.functions.grantRole(role, address)
+    
+    def schain_hash(self) -> bytes:
+        return self.contract.functions.schainHash().call()
+    
+    def mainnet_hash(self) -> bytes:
+        return self.contract.functions.MAINNET_HASH().call()
+    
+    def is_active_user(self, address) -> bool:
+        return self.contract.functions.activeUsers(address).call()
+    
+    def last_message_timestamp(self, address) -> int:
+        return self.contract.functions.lastMessageTimeStamp(address).call()
+    
+    def time_limit_per_msg(self, schain_hash: bytes) -> int:
+        keccak_hash = keccak.new(data=schain_hash.encode("utf8"), digest_bits=256)
+        hash = keccak_hash.digest()
+        return self.contract.functions.timeLimitPerMessage(hash).call()
+    
