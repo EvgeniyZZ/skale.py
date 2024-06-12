@@ -46,6 +46,7 @@ class TokenManagerERC20(BaseContract):
         return self.contract.functions.getRoleMember(role, index).call()
 
     def get_clones_erc20(self, schain_hash: bytes, address: str) -> int:
+        '''schan_hash - origin chain, address - origin token address'''
         keccak_hash = keccak.new(data=schain_hash.encode("utf8"), digest_bits=256)
         hash = keccak_hash.digest()
         return self.contract.functions.clonesErc20(hash, address).call()
