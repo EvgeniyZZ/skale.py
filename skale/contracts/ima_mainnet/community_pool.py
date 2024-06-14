@@ -27,7 +27,7 @@ class CommunityPool(BaseContract):
     def check_user_balance(self, schain_name: bytes, receiver: int) -> bool:
         keccak_hash = keccak.new(data=schain_name.encode("utf8"), digest_bits=256)
         schain_id = keccak_hash.digest()
-        return self.contract.functions.checkUserBalance(schain_id,receiver).call()
+        return self.contract.functions.checkUserBalance(schain_id, receiver).call()
 
     def get_recomended_recharge_amount(self, schain_hash: bytes, receiver: int) -> int:
         keccak_hash = keccak.new(data=schain_hash.encode("utf8"), digest_bits=256)
