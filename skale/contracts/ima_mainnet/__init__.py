@@ -19,5 +19,6 @@ __all__ = [
     'DepositBoxEth',
     'DepositBoxERC20',
     'DepositBoxERC721',
-    'DepositBoxERC1155'
+    'DepositBoxERC1155',
+    'DepositBoxERC721WithMetadata'
 ]
