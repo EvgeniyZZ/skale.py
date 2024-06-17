@@ -5,6 +5,10 @@ from skale.transactions.result import TxRes
 
 class TokenManagerERC1155(BaseContract):
     @transaction_method
+    def add_erc1155_token(self, schain_name: str, token_mn: int, token_sc: int) -> TxRes:
+        return self.contract.functions.addERC1155TokenByOwner(schain_name, token_mn, token_sc)
+
+    @transaction_method
     def exit_to_main_erc1155(self, token_address: int, token_id: int, amount: int) -> TxRes:
         return self.contract.functions.exitToMainERC1155(token_address, token_id, amount)
 
