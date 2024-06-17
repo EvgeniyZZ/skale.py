@@ -1,6 +1,6 @@
 from skale.contracts.base_contract import BaseContract, transaction_method
 from skale.transactions.result import TxRes
-
+from Crypto.Hash import keccak
 
 
 class TokenManagerERC1155(BaseContract):
@@ -27,6 +27,11 @@ class TokenManagerERC1155(BaseContract):
     @transaction_method
     def transfer_to_schain_erc1155_batch(self, schain_name: str, token_address: int, token_ids: list, amount: list) -> TxRes:
         return self.contract.functions.transferToSchainERC1155Batch(schain_name, token_address, token_ids, amount)
+
+    def get_clonesErc1155(self, schain_hash: bytes, address: str) -> int:
+        keccak_hash = keccak.new(data=schain_hash.encode("utf8"), digest_bits=256)
+        hash = keccak_hash.digest()
+        return self.contract.functions.clonesErc1155(hash, address).call()
 
     def enable_automatic_deploy(self) -> TxRes:
         return self.contract.functions.enableAutomaticDeploy()
