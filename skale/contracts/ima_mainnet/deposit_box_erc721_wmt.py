@@ -4,7 +4,7 @@ from Crypto.Hash import keccak
 
 
 
-class DepositBoxWithMetadataERC721(BaseContract):
+class DepositBoxERC721WithMetadata(BaseContract):
     @transaction_method
     def deposit_erc721(self, schain_name: str, address: int, tokenID: int) -> TxRes: 
         return self.contract.functions.depositERC721(schain_name, address, tokenID)
