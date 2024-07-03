@@ -37,7 +37,7 @@ class SchainIma(SkaleBase):
 
 
     def contracts_info(self) -> List[ContractInfo[SchainIma]]:
-        import skale.contracts.ima_schain as contract
+        import skale.contracts.ima.schain as contract
         return [
             ContractInfo('message_proxy_for_schain', 'MessageProxyForSchain',
                          contract.MessageProxyForSchain, ContractTypes.API, False),

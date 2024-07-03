@@ -3,9 +3,8 @@ from skale.transactions.result import TxRes
 from Crypto.Hash import keccak
 
 
-
-
 class TokenManagerERC20(BaseContract):
+    """Token manager ERC20"""
     def automatic_deploy(self) -> bool:
         return self.contract.functions.automaticDeploy().call()
 

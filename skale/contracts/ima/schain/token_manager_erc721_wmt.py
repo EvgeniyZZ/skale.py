@@ -3,11 +3,11 @@ from skale.transactions.result import TxRes
 from Crypto.Hash import keccak
 
 
-
 class TokenManagerERC721WithMetadata(BaseContract):
+    """Token manager with metadata"""
     def automatic_deploy(self) -> bool:
         return self.contract.functions.automaticDeploy().call()
-    
+
     @transaction_method
     def add_erc721(self, schain_name: str, token_mn: int, token_sc: int) -> TxRes:
         return self.contract.functions.addERC721TokenByOwner(schain_name, token_mn, token_sc)
