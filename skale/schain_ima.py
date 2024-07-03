@@ -43,7 +43,7 @@ class SchainIma(SkaleBase):
                          contract.MessageProxyForSchain, ContractTypes.API, False),
             ContractInfo('community_locker','CommunityLocker',
                          contract.CommunityLocker, ContractTypes.API, False),
-            ContractInfo('token_manager_linker', 'TokenManagerLinker',
+            ContractInfo('token_manager_eth', 'TokenManagerEth',
                          contract.TokenManagerETH, ContractTypes.API, False),
             ContractInfo('token_manager_erc20', 'TokenManagerERC20',
                          contract.TokenManagerERC20, ContractTypes.API, False),
@@ -51,7 +51,7 @@ class SchainIma(SkaleBase):
                          contract.TokenManagerERC721, ContractTypes.API, False),
             ContractInfo('token_manager_erc721_wmt','TokenManagerERC721WithMetadata',
                          contract.TokenManagerERC721WithMetadata, ContractTypes.API, False),
-            ContractInfo('token_manager_erc1155','TokenManagerERC1155',
+            ContractInfo('token_manager_erc1155', 'TokenManagerERC1155',
                          contract.TokenManagerERC1155, ContractTypes.API, False)
 
         ]

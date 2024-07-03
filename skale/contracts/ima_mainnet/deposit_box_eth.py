@@ -19,6 +19,9 @@ class DepositBoxEth(BaseContract):
     def enable_active_eth_transfers(self, schain_name: str) -> TxRes:
         return self.contract.functions.enableActiveEthTransfers(schain_name)
 
+    def approve_transfers(self, address) -> int:
+        return self.contract.functions.approveTransfers(address).call()
+
     def is_active_transfers(self, schain_name: str) -> bool:
         keccak_hash = keccak.new(data=schain_name.encode("utf8"), digest_bits=256)
         hash = keccak_hash.digest()
