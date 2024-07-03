@@ -13,9 +13,8 @@ class TokenManagerLinker(BaseContract):
     def disconnect_schain(self, schain_name) -> TxRes:
         return self.contract.functions.disconnectSchain(schain_name)
 
-    @transaction_method
     def has_schain(self, schian_name) -> bool:
-        return self.contract.functions.hasSchain(schian_name)
+        return self.contract.functions.hasSchain(schian_name).call()
 
     @transaction_method
     def registrar_role(self) -> bytes:

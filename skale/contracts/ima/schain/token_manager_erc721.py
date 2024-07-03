@@ -16,7 +16,7 @@ class TokenManagerERC721(BaseContract):
         return self.contract.functions.addERC721TokenByOwner(schain_name, token_mn, token_sc)
 
     @transaction_method
-    def disableAutomaticDeploy(self) -> TxRes:
+    def disable_automatic_deploy(self) -> TxRes:
         return self.contract.functions.disableAutomaticDeploy()
 
     def automatic_deploy_role(self) -> bytes:

@@ -4,7 +4,7 @@ from skale.contracts.manager.contract_manager import ContractManager
 from skale.contracts.base_contract import BaseContract, transaction_method
 
 from skale.contracts.ima.schain.message_proxy_for_schain import MessageProxyForSchain
-#from skale.contracts.ima_schain.token_manager_linker import TokenManagerLinker
+from skale.contracts.ima.schain.token_manager_linker import TokenManagerLinker
 from skale.contracts.ima.schain.token_manager_eth import TokenManagerETH
 from skale.contracts.ima.schain.token_manager_erc20 import TokenManagerERC20
 from skale.contracts.ima.schain.token_manager_erc721 import TokenManagerERC721

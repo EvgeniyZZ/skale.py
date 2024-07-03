@@ -52,7 +52,9 @@ class SchainIma(SkaleBase):
             ContractInfo('token_manager_erc721_wmt','TokenManagerERC721WithMetadata',
                          contract.TokenManagerERC721WithMetadata, ContractTypes.API, False),
             ContractInfo('token_manager_erc1155', 'TokenManagerERC1155',
-                         contract.TokenManagerERC1155, ContractTypes.API, False)
+                         contract.TokenManagerERC1155, ContractTypes.API, False),
+            ContractInfo('token_manager_linker', 'TokenManagerLinker',
+                         contract.TokenManagerLinker, ContractTypes.API, False)
 
         ]
 

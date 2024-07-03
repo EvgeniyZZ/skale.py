@@ -37,7 +37,7 @@ class TokenManagerERC1155(BaseContract):
         return self.contract.functions.enableAutomaticDeploy()
 
     @transaction_method
-    def disableAutomaticDeploy(self) -> TxRes:
+    def disable_automatic_deploy(self) -> TxRes:
         return self.contract.functions.disableAutomaticDeploy()
 
     def automatic_deploy_role(self) -> bytes:
