@@ -17,7 +17,7 @@ class TokenManagerLinker(BaseContract):
         return self.contract.functions.hasSchain(schian_name).call()
 
     def registrar_role(self) -> bytes:
-        return self.contract.functions.REGISTRAR_ROLE().call()
+        return self.contract.functions.REGISTRAR_ROLE()
 
     def has_role(self, role: bytes, address: int) -> bool:
         return self.contract.functions.hasRole(role, address).call()
