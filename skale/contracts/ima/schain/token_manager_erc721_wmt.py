@@ -23,6 +23,10 @@ class TokenManagerERC721WithMetadata(BaseContract):
     def automatic_deploy_role(self) -> bytes:
         return self.contract.functions.AUTOMATIC_DEPLOY_ROLE().call()
 
+    @transaction_method
+    def exit_to_main_erc721(self, address: int, token_id: int) -> TxRes:
+        return self.contract.functions.exitToMainERC721(address, token_id)
+
     def token_registrar_role(self) -> bytes:
         return self.contract.functions.TOKEN_REGISTRAR_ROLE().call()
 

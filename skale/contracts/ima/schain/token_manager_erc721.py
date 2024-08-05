@@ -29,6 +29,10 @@ class TokenManagerERC721(BaseContract):
         return self.contract.functions.hasRole(role, address).call()
 
     @transaction_method
+    def exit_to_main_erc721(self, address: int, token_id: int) -> TxRes:
+        return self.contract.functions.exitToMainERC721(address, token_id)
+
+    @transaction_method
     def grant_role(self, role: bytes, address: str) -> TxRes:
         return self.contract.functions.grantRole(role, address)
 
