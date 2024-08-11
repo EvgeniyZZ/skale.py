@@ -20,7 +20,7 @@ class TokenManagerLinker(BaseContract):
         return self.contract.functions.REGISTRAR_ROLE().call()
 
     def has_role(self, role: bytes, address: int) -> bool:
-        return self.contract.functions.hasRole(role, address)
+        return self.contract.functions.hasRole(role, address).call()
 
     @transaction_method
     def grant_role(self, role: bytes, address: str) -> TxRes:
