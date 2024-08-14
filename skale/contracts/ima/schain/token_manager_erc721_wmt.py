@@ -17,6 +17,11 @@ class TokenManagerERC721WithMetadata(BaseContract):
         return self.contract.functions.enableAutomaticDeploy()
 
     @transaction_method
+    def transfer_to_schain_erc721(self, schain_name: str, address: int, token_id: int) -> TxRes:
+        """ address - token address on origin chain"""
+        return self.contract.functions.transferToSchainERC721(schain_name, address, token_id)
+
+    @transaction_method
     def disable_automatic_deploy(self) -> TxRes:
         return self.contract.functions.disableAutomaticDeploy()
 
