@@ -19,7 +19,7 @@ class DepositBoxERC1155(BaseContract):
     def deposit_direct_erc1155(self, schain_name: str, address: int,
                                token_id: int, amount: int, receiver: int) -> TxRes:
         """Direct deposit ERC1155"""
-        return self.contract.functions.depositERC1155Direct(self, schain_name, address,
+        return self.contract.functions.depositERC1155Direct(schain_name, address,
                                                             token_id, amount, receiver)
 
     @transaction_method
