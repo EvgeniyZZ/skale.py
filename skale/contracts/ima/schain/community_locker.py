@@ -3,7 +3,6 @@ from skale.transactions.result import TxRes
 from Crypto.Hash import keccak
 
 
-
 class CommunityLocker(BaseContract):
     """"Community locker"""
     @transaction_method
@@ -11,7 +10,7 @@ class CommunityLocker(BaseContract):
         '''Set time limit'''
         return self.contract.functions.setTimeLimitPerMessage(schain_name, new_time_limit)
 
-    def constant_setter_role(self) -> bytes:    
+    def constant_setter_role(self) -> bytes:
         return self.contract.functions.CONSTANT_SETTER_ROLE().call()
 
     def has_role(self, role: bytes, address: int) -> bool:

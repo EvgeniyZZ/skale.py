@@ -3,7 +3,6 @@ from skale.transactions.result import TxRes
 from Crypto.Hash import keccak
 
 
-
 class CommunityPool(BaseContract):
     @transaction_method
     def recharge_user_wallet(self, schain_name: str, address: int) -> TxRes:
@@ -18,8 +17,8 @@ class CommunityPool(BaseContract):
         return self.contract.functions.setMinTransactionGas(min_gas_value)
 
     @transaction_method
-    def set_multiplier(self, new_multiplier_numertor: int, new_multiplier_divider: int) -> TxRes:
-        return self.contract.functions.setMultiplier(new_multiplier_numertor, new_multiplier_divider)
+    def set_multiplier(self, new_numertor: int, new_divider: int) -> TxRes:
+        return self.contract.functions.setMultiplier(new_numertor, new_divider)
 
     def get_balance(self, address: int, schain_name: str) -> int:
         return self.contract.functions.getBalance(address, schain_name).call()
@@ -29,7 +28,7 @@ class CommunityPool(BaseContract):
         schain_id = keccak_hash.digest()
         return self.contract.functions.checkUserBalance(schain_id, receiver).call()
 
-    def get_recomended_recharge_amount(self, schain_hash: bytes, receiver: int) -> int:
+    def get_recommended_recharge_amount(self, schain_hash: bytes, receiver: int) -> int:
         keccak_hash = keccak.new(data=schain_hash.encode("utf8"), digest_bits=256)
         schain_id = keccak_hash.digest()
         return self.contract.functions.getRecommendedRechargeAmount(schain_id, receiver).call()
