@@ -5,21 +5,28 @@ from Crypto.Hash import keccak
 
 class TokenManagerERC721WithMetadata(BaseContract):
     """Token manager with metadata"""
+
     def automatic_deploy(self) -> bool:
         return self.contract.functions.automaticDeploy().call()
 
     @transaction_method
     def add_erc721(self, schain_name: str, token_mn: int, token_sc: int) -> TxRes:
-        return self.contract.functions.addERC721TokenByOwner(schain_name, token_mn, token_sc)
+        return self.contract.functions.addERC721TokenByOwner(
+            schain_name, token_mn, token_sc
+        )
 
     @transaction_method
     def enable_automatic_deploy(self) -> TxRes:
         return self.contract.functions.enableAutomaticDeploy()
 
     @transaction_method
-    def transfer_to_schain_erc721(self, schain_name: str, address: int, token_id: int) -> TxRes:
-        """ address - token address on origin chain"""
-        return self.contract.functions.transferToSchainERC721(schain_name, address, token_id)
+    def transfer_to_schain_erc721(
+        self, schain_name: str, address: int, token_id: int
+    ) -> TxRes:
+        """address - token address on origin chain"""
+        return self.contract.functions.transferToSchainERC721(
+            schain_name, address, token_id
+        )
 
     @transaction_method
     def disable_automatic_deploy(self) -> TxRes:
@@ -44,8 +51,8 @@ class TokenManagerERC721WithMetadata(BaseContract):
 
     def get_role_member(self, role: bytes, index: int) -> bytes:
         return self.contract.functions.getRoleMember(role, index).call()
-    
+
     def get_clones_erc721(self, schain_hash: bytes, address: str) -> int:
         keccak_hash = keccak.new(data=schain_hash.encode("utf8"), digest_bits=256)
         hash = keccak_hash.digest()
-        return self.contract.functions.clonesErc721(hash, address).call() 
+        return self.contract.functions.clonesErc721(hash, address).call()

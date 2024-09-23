@@ -13,12 +13,18 @@ class TokenManagerERC721(BaseContract):
 
     @transaction_method
     def add_erc721(self, schain_name: str, token_mn: int, token_sc: int) -> TxRes:
-        return self.contract.functions.addERC721TokenByOwner(schain_name, token_mn, token_sc)
+        return self.contract.functions.addERC721TokenByOwner(
+            schain_name, token_mn, token_sc
+        )
 
     @transaction_method
-    def transfer_to_schain_erc721(self, schain_name: str, address: int, token_id: int) -> TxRes:
-        """ address - token address on origin chain"""
-        return self.contract.functions.transferToSchainERC721(schain_name, address, token_id)
+    def transfer_to_schain_erc721(
+        self, schain_name: str, address: int, token_id: int
+    ) -> TxRes:
+        """address - token address on origin chain"""
+        return self.contract.functions.transferToSchainERC721(
+            schain_name, address, token_id
+        )
 
     @transaction_method
     def disable_automatic_deploy(self) -> TxRes:

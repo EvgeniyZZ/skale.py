@@ -4,11 +4,16 @@ from Crypto.Hash import keccak
 
 
 class CommunityLocker(BaseContract):
-    """"Community locker"""
+    """ "Community locker"""
+
     @transaction_method
-    def set_time_limit_per_message(self, schain_name: str, new_time_limit: int) -> TxRes:
-        '''Set time limit'''
-        return self.contract.functions.setTimeLimitPerMessage(schain_name, new_time_limit)
+    def set_time_limit_per_message(
+        self, schain_name: str, new_time_limit: int
+    ) -> TxRes:
+        """Set time limit"""
+        return self.contract.functions.setTimeLimitPerMessage(
+            schain_name, new_time_limit
+        )
 
     def constant_setter_role(self) -> bytes:
         return self.contract.functions.CONSTANT_SETTER_ROLE().call()

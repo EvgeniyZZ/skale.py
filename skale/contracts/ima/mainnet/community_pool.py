@@ -18,8 +18,8 @@ class CommunityPool(BaseContract):
         return self.contract.functions.setMinTransactionGas(min_gas_value)
 
     @transaction_method
-    def set_multiplier(self, new_numertor: int, new_divider: int) -> TxRes:
-        return self.contract.functions.setMultiplier(new_numertor, new_divider)
+    def set_multiplier(self, new_numerator: int, new_divider: int) -> TxRes:
+        return self.contract.functions.setMultiplier(new_numerator, new_divider)
 
     def get_balance(self, address: int, schain_name: str) -> int:
         return self.contract.functions.getBalance(address, schain_name).call()
@@ -32,7 +32,9 @@ class CommunityPool(BaseContract):
     def get_recommended_recharge_amount(self, schain_hash: bytes, receiver: int) -> int:
         keccak_hash = keccak.new(data=schain_hash.encode("utf8"), digest_bits=256)
         schain_id = keccak_hash.digest()
-        return self.contract.functions.getRecommendedRechargeAmount(schain_id, receiver).call()
+        return self.contract.functions.getRecommendedRechargeAmount(
+            schain_id, receiver
+        ).call()
 
     def constant_setter_role(self) -> bool:
         return self.contract.functions.CONSTANT_SETTER_ROLE().call()

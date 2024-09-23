@@ -2,15 +2,17 @@ from skale.contracts.base_contract import BaseContract, transaction_method
 from skale.transactions.result import TxRes
 from Crypto.Hash import keccak
 
+
 class DepositBoxERC20(BaseContract):
-    '''Deposit Box'''
+    """Deposit Box"""
+
     def is_whitelisted(self, schain_name: str) -> bool:
         return self.contract.functions.isWhitelisted(schain_name).call()
 
     @transaction_method
     def enable_whitelist(self, schain_name: str) -> TxRes:
         return self.contract.functions.enableWhitelist(schain_name)
-    
+
     @transaction_method
     def disable_whitelist(self, schain_name: str) -> TxRes:
         return self.contract.functions.disableWhitelist(schain_name)
@@ -24,12 +26,16 @@ class DepositBoxERC20(BaseContract):
         return self.contract.functions.depositERC20(schain_name, address, amount)
 
     @transaction_method
-    def deposit_erc20_direct(self, schain_name: str, address: int, amount: int, receiver: int) -> TxRes:
-        return self.contract.functions.depositERC20Direct(schain_name, address, amount, receiver)
+    def deposit_erc20_direct(
+        self, schain_name: str, address: int, amount: int, receiver: int
+    ) -> TxRes:
+        return self.contract.functions.depositERC20Direct(
+            schain_name, address, amount, receiver
+        )
 
     @transaction_method
     def set_big_transfer_value(self, schain_name: str, token: int, value: int) -> TxRes:
-        return self.contract.functions.setBigTransferValue(schain_name, token, value)   
+        return self.contract.functions.setBigTransferValue(schain_name, token, value)
 
     @transaction_method
     def set_big_transfer_delay(self, schain_name: str, delay: int) -> TxRes:

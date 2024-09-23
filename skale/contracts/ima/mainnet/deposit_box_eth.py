@@ -2,14 +2,15 @@ from skale.contracts.base_contract import BaseContract, transaction_method
 from skale.transactions.result import TxRes
 from Crypto.Hash import keccak
 
+
 class DepositBoxEth(BaseContract):
     @transaction_method
     def deposit(self, schain_name: str) -> TxRes:
         return self.contract.functions.deposit(schain_name)
 
     @transaction_method
-    def deposit_direct(self, schain_name: str, receiver: int) -> TxRes: 
-        return self.contract.functions.depositDirect(schain_name, receiver) 
+    def deposit_direct(self, schain_name: str, receiver: int) -> TxRes:
+        return self.contract.functions.depositDirect(schain_name, receiver)
 
     @transaction_method
     def get_my_eth(self) -> TxRes:
