@@ -37,7 +37,7 @@ class SchainIma(SkaleBase):
 
 
     def contracts_info(self) -> List[ContractInfo[SchainIma]]:
-        import skale.contracts.ima_schain as contract
+        import skale.contracts.ima.schain as contract
         return [
             ContractInfo('message_proxy_for_schain', 'MessageProxyForSchain',
                          contract.MessageProxyForSchain, ContractTypes.API, False),
@@ -52,7 +52,9 @@ class SchainIma(SkaleBase):
             ContractInfo('token_manager_erc721_wmt','TokenManagerERC721WithMetadata',
                          contract.TokenManagerERC721WithMetadata, ContractTypes.API, False),
             ContractInfo('token_manager_erc1155', 'TokenManagerERC1155',
-                         contract.TokenManagerERC1155, ContractTypes.API, False)
+                         contract.TokenManagerERC1155, ContractTypes.API, False),
+            ContractInfo('token_manager_linker', 'TokenManagerLinker',
+                         contract.TokenManagerLinker, ContractTypes.API, False)
 
         ]
 

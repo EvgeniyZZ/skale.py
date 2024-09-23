@@ -36,7 +36,7 @@ class SkaleIma(SkaleBase):
         return 'mainnet-ima'
 
     def contracts_info(self) -> List[ContractInfo[SkaleIma]]:
-        import skale.contracts.ima_mainnet as contracts
+        import skale.contracts.ima.mainnet as contracts
         return [
             ContractInfo('message_proxy_for_mainnet', 'MessageProxyForMainnet',
                          contracts.MessageProxyForMainnet, ContractTypes.API, False),
