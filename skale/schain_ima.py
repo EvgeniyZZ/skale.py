@@ -35,7 +35,6 @@ class SchainIma(SkaleBase):
     def project_name(self) -> str:
         return 'schain-ima'
 
-
     def contracts_info(self) -> List[ContractInfo[SchainIma]]:
         import skale.contracts.ima.schain as contract
         return [
@@ -62,6 +61,6 @@ class SchainIma(SkaleBase):
         self._SkaleBase__contracts_info = get_contracts_info(self.contracts_info())
 
 
-def spawn_skale_ima_lib(SchainIma: SchainIma) -> SchainIma:
+def spawn_skale_ima_lib(schain_ima: SchainIma) -> SchainIma:
     """ Clone skale ima object with the same wallet """
-    return SchainIma(schain_ima._endpoint, schain_ima.instance.address, schain_ima.wallet)
+    return SchainIma(schain_ima._endpoint, schain_ima.instance.address, schain_ima.wallet)  
