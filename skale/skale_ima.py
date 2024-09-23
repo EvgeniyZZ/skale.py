@@ -50,7 +50,7 @@ class SkaleIma(SkaleBase):
                          contracts.DepositBoxERC20, ContractTypes.API, False),
             ContractInfo('deposit_box_erc721', 'DepositBoxERC721',
                          contracts.DepositBoxERC721, ContractTypes.API, False),
-            ContractInfo('deposit_box_erc721_wmt', 'DepositBoxERC721WithMetadata', 
+            ContractInfo('deposit_box_erc721_wmt', 'DepositBoxERC721WithMetadata',
                          contracts.DepositBoxERC721WithMetadata, ContractTypes.API, False),
             ContractInfo('deposit_box_erc1155', 'DepositBoxERC1155',
                          contracts.DepositBoxERC1155, ContractTypes.API, False)

@@ -40,7 +40,7 @@ class SchainIma(SkaleBase):
         return [
             ContractInfo('message_proxy_for_schain', 'MessageProxyForSchain',
                          contract.MessageProxyForSchain, ContractTypes.API, False),
-            ContractInfo('community_locker','CommunityLocker',
+            ContractInfo('community_locker', 'CommunityLocker',
                          contract.CommunityLocker, ContractTypes.API, False),
             ContractInfo('token_manager_eth', 'TokenManagerEth',
                          contract.TokenManagerETH, ContractTypes.API, False),
@@ -48,7 +48,7 @@ class SchainIma(SkaleBase):
                          contract.TokenManagerERC20, ContractTypes.API, False),
             ContractInfo('token_manager_erc721', 'TokenManagerERC721',
                          contract.TokenManagerERC721, ContractTypes.API, False),
-            ContractInfo('token_manager_erc721_wmt','TokenManagerERC721WithMetadata',
+            ContractInfo('token_manager_erc721_wmt', 'TokenManagerERC721WithMetadata',
                          contract.TokenManagerERC721WithMetadata, ContractTypes.API, False),
             ContractInfo('token_manager_erc1155', 'TokenManagerERC1155',
                          contract.TokenManagerERC1155, ContractTypes.API, False),
@@ -63,4 +63,4 @@ class SchainIma(SkaleBase):
 
 def spawn_skale_ima_lib(schain_ima: SchainIma) -> SchainIma:
     """ Clone skale ima object with the same wallet """
-    return SchainIma(schain_ima._endpoint, schain_ima.instance.address, schain_ima.wallet)  
+    return SchainIma(schain_ima._endpoint, schain_ima.instance.address, schain_ima.wallet)
