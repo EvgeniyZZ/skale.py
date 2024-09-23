@@ -1,8 +1,6 @@
 # flake8: noqa
-
-from skale.contracts.manager.contract_manager import ContractManager
 from skale.contracts.base_contract import BaseContract, transaction_method
-from skale.contracts.paymaster_contract import Paymaster
+from skale.contracts.paymaster.paymaster import Paymaster
 
 __all__ = [
     'Paymaster'

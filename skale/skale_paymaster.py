@@ -30,16 +30,16 @@ from skale.utils.helper import get_contracts_info
 logger = logging.getLogger(__name__)
 
 
-class Paymaster(SkaleBase):
+class SkalePaymaster(SkaleBase):
     @property
     def project_name(self) -> str:
         return 'paymaster'
 
-    def contracts_info(self) -> List[ContractInfo[Paymaster]]:
-        import skale.contracts.paymaster as contract
+    def contracts_info(self) -> List[ContractInfo[SkalePaymaster]]:
+        import skale.contracts.paymaster as contracts
         return [
             ContractInfo('paymaster', 'Paymaster',
-                         contract.paymaster, ContractTypes.API, False)
+                         contracts.Paymaster, ContractTypes.API, False)
 
         ]
 
@@ -47,6 +47,6 @@ class Paymaster(SkaleBase):
         self._SkaleBase__contracts_info = get_contracts_info(self.contracts_info())
 
 
-def spawn_skale_ima_lib(paymaster: Paymaster) -> Paymaster:
+def spawn_skale_ima_lib(paymaster: SkalePaymaster) -> SkalePaymaster:
     """ Clone skale ima object with the same wallet """
-    return Paymaster(paymaster._endpoint, paymaster.instance.address, paymaster.wallet)
+    return SkalePaymaster(paymaster._endpoint, paymaster.instance.address, paymaster.wallet)
