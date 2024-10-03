@@ -82,3 +82,36 @@ class Paymaster(BaseContract):
     
     def get_nodes_number(self, validator_id: int) -> int:
         return self.contract.functions.getNodesNumber(validator_id).call()
+
+    def get_historical_active_nodes_number(self, validator_id: int, time_when: int) -> int:
+        return self.contract.functions.getHistoricalActiveNodesNumber(validator_id, time_when).call()
+    
+    def get_historical_total_active_nodes_number(self, time_when: int) -> int:
+        return self.contract.functions.getHistoricalTotalActiveNodesNumber(time_when).call()
+
+    def get_validator_number(self, number: int) -> int:
+        return self.contract.functions.getValidatorsNumber(number).call()
+    
+    def get_schain_names(self, names_array: str) -> str:
+        return self.contract.functions.getSchainsNames(names_array).call()
+    
+    def get_total_reward(self, time_from: int, time_to: int) -> int:
+        return self.contract.functions.getTotalReward(time_from, time_to).call()
+    
+    @transaction_method
+    def set_nodes_amount(self, validator_id: int, amount: int) -> TxRes:
+        return self.contract.functions.setNodesAmount(validator_id, amount)
+
+    @transaction_method
+    def claim_for(self, validator_id: int, address: int) -> TxRes:
+        return self.contract.functions.claimFor(validator_id, address)
+    
+    def get_schain_number(self, number: int) -> str:
+        return self.contract.functions.getSchainsNumber(number).call()
+
+
+    
+
+
+
+    
