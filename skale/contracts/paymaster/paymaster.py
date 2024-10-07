@@ -130,3 +130,11 @@ class Paymaster(BaseContract):
 
     def get_skale_token(self) -> int:
         return self.contract.functions.skaleToken().call()
+
+    @transaction_method
+    def skip_time(self, seconds: int) -> TxRes:
+        return self.contract.functions.skipTime(seconds)
+
+    def get_effective_timestamp(self) -> int:
+        return self.contract.functions.effectiveTimestamp().call()
+    
