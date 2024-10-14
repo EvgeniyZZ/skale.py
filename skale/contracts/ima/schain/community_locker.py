@@ -20,6 +20,10 @@ class CommunityLocker(BaseContract):
 
     def has_role(self, role: bytes, address: int) -> bool:
         return self.contract.functions.hasRole(role, address).call()
+    
+    @transaction_method
+    def revoke_role(self, role: bytes, address: int) -> TxRes:
+        return self.contract.functions.revokeRole(role, address)
 
     @transaction_method
     def grant_role(self, role: bytes, address: int) -> TxRes:
