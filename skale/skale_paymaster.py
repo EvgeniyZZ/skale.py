@@ -38,7 +38,7 @@ class SkalePaymaster(SkaleBase):
     def contracts_info(self) -> List[ContractInfo[SkalePaymaster]]:
         import skale.contracts.paymaster as contracts
         return [
-            ContractInfo('paymaster', 'Paymaster',
+            ContractInfo('paymaster', 'FastForwardPaymaster' if self.debug else 'Paymaster',
                          contracts.Paymaster, ContractTypes.API, False)
 
         ]
