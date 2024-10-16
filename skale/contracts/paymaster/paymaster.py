@@ -138,3 +138,13 @@ class Paymaster(BaseContract):
 
     def get_effective_timestamp(self) -> int:
         return self.contract.functions.effectiveTimestamp().call()
+
+    def get_debts_amount(self, debt_id: int) -> int:
+        return self.contrct.functions.debts(debt_id).call()
+
+    def get_debts_begin(self) -> int:
+        return self.contract.functions.debtsBegin().call()
+
+    def get_debts_end(self) -> int:
+        return self.contrsct.functions.debtsEnd().call()
+    
